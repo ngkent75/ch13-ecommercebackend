@@ -11,8 +11,14 @@ router.get('/', async (req, res) => {
       // be sure to include its associated Category and Tag data
       include: [
         { model: Category },
-        { model: Tag }
-      ]
+        {
+          model: Tag,
+          through: { attributes: [] }
+        }
+      ],
+      attributes: {
+        exclude: ['category_id', 'categoryId']
+      }
     });
     res.status(200).json(productData);
   } catch (err) {
@@ -28,8 +34,14 @@ router.get('/:id', async (req, res) => {
       // be sure to include its associated Category and Tag data
       include: [
         { model: Category },
-        { model: Tag }
-      ]
+        {
+          model: Tag,
+          through: { attributes: [] }
+        },
+      ],
+        attributes: {
+          exclude: ['category_id', 'categoryId']
+        }
     });
     if (!productData) {
       res.status(404).json({ message: 'No product found with that ID!' });
@@ -54,7 +66,7 @@ router.post('/', (req, res) => {
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
-      if (req.body.tagIds.length) {
+      if (req.body.tagIds) {
         const productTagIdArr = req.body.tagIds.map((tag_id) => {
           return {
             product_id: product.id,
@@ -127,6 +139,7 @@ router.delete('/:id', async (req, res) => {
       res.status(404).json({ message: 'No product found with that ID!' });
       return;
     }
+    res.status(200).json(productData);
   } catch (err) {
     res.status(500).json(err);
   }
