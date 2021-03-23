@@ -22,6 +22,10 @@ SO THAT my company can compete with other e-commerce companies
 
 To access the repo, go to https://github.com/ngkent75/ch13-ecommercebackend
 
+To access on Heroku, go to https://serene-hollows-45241.herokuapp.com
+
+Make sure to put the correct API route at the end.
+
 The following GIFs will walk you through how to initialize the server and database and how to utilize GET, POST, PUT, and DELETE through PostMan.
 
 1. Generate the schema using MySQL.
