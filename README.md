@@ -9,7 +9,7 @@
 * [Questions](#questions)
 
 ## Description
-This project is the back end for an e-commerce site. You can submit a GET, POST, PUT, and DELETE for categories, products, and tags. The tags and products have a many-to-relationship, since a product can have multiple tags and vice versa. My motivation for creating this is to gain experience in largest secotr of the electronics industry. Being able to code the backend for a project in $29 trillion indusry is a valuable skill to have as a full-stack web developer.
+This project is the backend for an e-commerce site. You can submit a GET, POST, PUT, and DELETE for categories, products, and tags. The tags and products have a many-to-many relationship, since a product can have multiple tags and vice versa. My motivation for creating this is to gain experience in the largest sector of the electronics industry. Being able to code the backend for a project in a $29 trillion indusry is a valuable skill to have as a full-stack web developer.
 
 ```md
 AS A manager at an internet retail company
@@ -32,7 +32,7 @@ The following GIFs will walk you through how to initialize the server and databa
 
 ![Generating the Schema](./assets/createSchema.gif)
 
-2. Type in the command `npm run seed` into the terminal to run the seed files.
+2. Make sure you have already run npm i if you don't have a package-lock.json. Type in the command `npm run seed` into the terminal to run the seed files.
 
 ![Running the Seed](./assets/runSeed.gif)
 
